@@ -25,7 +25,7 @@ jobs:
       - name: build
         run: |
           docker login docker.pkg.github.com --username ${{ secrets.DOCKER_USER }} --password ${{ secrets.DOCKER_PASSWORD }}
-          sh ./build_push_update_images.sh
+          /bin/bash ./build_push_update_images.sh
         env:
           PREFIX: "golangcode" 
 
