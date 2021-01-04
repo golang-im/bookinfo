@@ -25,7 +25,9 @@ jobs:
       - name: build
         run: |
           docker login docker.pkg.github.com --username ${{ secrets.DOCKER_USER }} --password ${{ secrets.DOCKER_PASSWORD }}
-          sh ./build_push_update_images.sh
+          git clone https://github.com/golang-im/bookinfo.git
+          cd bookinfo
+          bash ./build_push_update_images.sh latest
         env:
           PREFIX: "golangcode" 
 
