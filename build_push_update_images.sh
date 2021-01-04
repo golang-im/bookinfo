@@ -36,7 +36,7 @@ else
 fi
 
 # Process the input arguments. By default, image scanning is disabled.
-PREFIX=istio
+PREFIX=golangcode
 ENABLE_IMAGE_SCAN=false
 echo "$@"
 for i in "$@"
@@ -116,5 +116,5 @@ do
 done
 
 #Update image references in the yaml files
-find . -name "*bookinfo*.yaml" -exec sed -i.bak "s/image:.*\\(\\/examples-bookinfo-.*\\):.*/image: ${PREFIX//\//\\\/}\\1:$VERSION/g" {} +
+#find . -name "*bookinfo*.yaml" -exec sed -i.bak "s/image:.*\\(\\/examples-bookinfo-.*\\):.*/image: ${PREFIX//\//\\\/}\\1:$VERSION/g" {} +
 
